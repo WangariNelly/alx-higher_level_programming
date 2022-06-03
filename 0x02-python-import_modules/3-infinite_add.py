@@ -11,3 +11,4 @@ if __name__ == "__main__":
     for argNo in range(len(sys.argv) - 1):
         sum_of_arguments += int(sys.argv[argNo + 1])
     print("{:d}".format(sum_of_arguments))
+    
