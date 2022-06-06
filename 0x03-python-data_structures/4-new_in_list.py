@@ -5,5 +5,5 @@ def new_in_list(my_list, idx, element):
     else:
         new = [num for num in my_list]
         new[idx] = element
-        return(new)
+    return(new)
   
