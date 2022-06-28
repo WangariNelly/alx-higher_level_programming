@@ -1,4 +1,4 @@
 #!/usr/bin/python3
-def magic_string():
-    for x in range(5):
-        print(magic_string())
+def magic_string(BestSchool):
+    for x in range(10):
+        print(magic_string(BestSchool))
