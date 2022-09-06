@@ -1,7 +1,13 @@
 #!/usr/bin/node
-const myVar = 'C is fun';
-const myVar1 = 'Python is cool';
-const myVar2 = 'Javascript is amazing';
-console.log(myVar);
-console.log(myVar1);
-console.log(myVar2);
+// Script that prints 3 lines.
+const lines = [
+  'C is fun',
+  'Python is cool',
+  'JavaScript is amazing'
+];
+
+lines.forEach(print);
+
+function print (line) {
+  console.log(line);
+}

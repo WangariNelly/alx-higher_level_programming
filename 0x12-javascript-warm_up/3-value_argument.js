@@ -1,8 +1,6 @@
 #!/usr/bin/node
-let output = process.argv[2];
-if (output === undefined){
-   console.log("No argument");
-}
-else {
-   console.log(output);
-}
+// Script that prints the first argument passed to it:
+let output;
+
+(process.argv[2] ? output = process.argv[2] : output = 'No arguement');
+console.log(output);

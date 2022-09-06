@@ -1,6 +1,13 @@
 #!/usr/bin/node
-let myArr = ['C is fun', 'Python is cool', 'Javascript is amazing'];
-let i = 0;
-for (i in myArr.length, i++){
-   console.log(myArr[i])
+// Script that prints 3 lines.
+const lines = [
+  'C is fun',
+  'Python is cool',
+  'JavaScript is amazing'
+];
+
+lines.forEach(print);
+
+function print (line) {
+  console.log(line);
 }
