@@ -1,19 +1,31 @@
 #!/usr/bin/python3
-"""lists all cities from the database hbtn_0e_4_usa"""
+"""
+Script that lists all the cities from database
+"""
 
-if __name__ == '__main__':
-    import MySQLdb
-    import sys
 
-    db = MySQLdb.connect(host='localhost', port=3306,
-                         user=sys.argv[1], passwd=sys.argv[2], db=sys.argv[3])
+import MySQLdb
+from sys import argv
 
-    cur = db.cursor()
-    cur.execute("SELECT cities.id, cities.name, states.name\
-                FROM cities LEFT JOIN states\
-                ON states.id = cities.state_id\
-                ORDER BY cities.id ASC")
-
-    rows = cur.fetchall()
-    for row in rows:
-        print(row)
+if __name__ == "__main__":
+    conn = MySQLdb.connect(
+        host='localhost',
+        user=argv[1],
+        passwd=argv[2],
+        db=argv[3],
+        port=3306
+    )
+    sql = (
+        "SELECT c.id, c.name, s.name FROM \
+        cities as c INNER JOIN \
+        states as s ON \
+        c.state_id = s.id \
+        ORDER BY c.id"
+    )
+    cur = conn.cursor()
+    cur.execute(sql)
+    cities = cur.fetchall()
+    for city in cities:
+        print(city)
+    cur.close()
+    conn.close()
